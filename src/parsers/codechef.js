@@ -27,7 +27,6 @@ const codechef = () => axios.get('http://www.codechef.com/contests', { timeout: 
         contestTables[headings.eq(i).text()] = statusdiv.eq(i).find('tr').slice(1);
       }
     }
-    console.log(contestTables);
     let contests = contestTables['Present Coding Contests'].map((i, elem) => parseContestDetails($, elem)).get();
     contests = contests.concat(contestTables['Upcoming Coding Contests'].map((i, elem) => parseContestDetails($, elem)).get());
 
